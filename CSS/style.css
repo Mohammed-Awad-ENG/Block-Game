@@ -1,0 +1,257 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Press Start 2P", system-ui;
+}
+.game-container {
+    width: 1000px;
+    height: 450px;
+    margin: 20px auto;
+    position: relative;
+}
+.wall {
+    position: absolute;
+    background-color: black;
+}
+.level-numper {
+    width: 100%;
+    text-align: center;
+    padding: 25px;
+    cursor: pointer;
+}
+.level-numper:hover {
+    color: rgba(0, 0, 0, 0.7);
+}
+.player {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+    background-size: contain;
+}
+
+.control-game {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: rgba(3, 169, 244, 0.9);
+    /* ////////////////////////////////////////////////////////// */
+}
+.settings {
+    position: fixed;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+.settings label {
+    font-size: 20px;
+}
+.settings #speed-input {
+    width: fit-content;
+    width: 100px;
+    text-align: center;
+    height: 50px;
+    padding: 10px;
+    margin-right: 20px;
+}
+.settings .icon {
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    background-size: cover;
+    margin-right: 10px;
+}
+.icon.active {
+    border: 5px solid black;
+    border-radius: 50%;
+}
+
+.levels-container {
+    display: grid;
+    grid-template-columns: repeat(5, 150px);
+    justify-content: center;
+    align-content: center;
+    gap: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.control-game span {
+    color: white;
+    background-color: #f44336;
+    padding: 15px 25px;
+    font-size: 30px;
+    text-align: center;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 2px 2px 1px #000;
+}
+.control-game span:hover {
+    background-color: #da190b;
+    transform: scale(1.05);
+}
+
+.playAgain {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    background-color: #f44336;
+    padding: 15px 25px;
+    color: white;
+    background-color: #f44336;
+    padding: 25px 35px;
+    font-size: 20px;
+    box-shadow: 2px 2px 1px #000;
+    border-radius: 6px;
+    cursor: pointer;
+    display: none;
+    z-index: 12;
+}
+
+.playAgain:hover {
+    background-color: #da190b;
+    transform: scale(1.05) translate(-50%, -50%);
+}
+/* level One */
+.moving-block-lOne {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-image: url(../imgs/smilyface.ico);
+    background-size: contain;
+    position: absolute;
+    top: 88px;
+    left: 50px;
+    animation: moveOne 1.5s ease-in-out alternate infinite;
+    background-color: transparent;
+}
+@keyframes moveOne {
+    to {
+        left: 400px;
+    }
+}
+
+#finish-line {
+    background-image: url(../imgs/coin.jpg);
+    background-size: contain;
+}
+.level-5 {
+    animation: moveFive 1.5s ease-in-out alternate infinite;
+}
+@keyframes moveFive {
+    to {
+        left: 100px;
+    }
+}
+.I-lost-the-name-plot {
+    animation: lost 1.5s ease-in-out alternate infinite;
+}
+@keyframes lost {
+    to {
+        top: 20px;
+    }
+}
+
+.game-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0);
+    animation: fillBlack 1.5s ease-in-out forwards;
+}
+.game-overlay.tow {
+    background-color: rgba(0, 0, 255, 0);
+    animation: fillBlue 1.5s ease-in-out forwards;
+}
+
+@keyframes fillBlack {
+    to {
+        background-color: rgba(0, 0, 0, 1);
+    }
+}
+@keyframes fillBlue {
+    to {
+        background-color: rgba(0, 0, 255, 1);
+    }
+}
+.finally {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    font-size: 20px;
+    font-weight: bold;
+}
+.finally p {
+    margin-bottom: 20px;
+}
+.Return {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    margin: 20px auto;
+    text-decoration: none;
+    width: fit-content;
+    text-align: center;
+
+    padding: 15px 20px;
+    border-radius: 25px;
+    color: black;
+    position: relative;
+}
+.Return::after {
+    content: "";
+    position: absolute;
+    background-color: black;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    transition: 0.5s;
+    left: -25px;
+    z-index: -1;
+}
+.Return::before {
+    content: "";
+    position: absolute;
+    background-color: black;
+    width: 12px;
+    height: 12px;
+    transition: 0.5s;
+    border-radius: 50%;
+    z-index: -1;
+    right: -25px;
+}
+.Return:hover::before {
+    width: 51%;
+    height: 100%;
+    right: 0;
+    border-radius: 0 0 25px;
+}
+.Return:hover::after {
+    width: 50%;
+    height: 100%;
+    border-radius: 0;
+    border-radius: 25px 0 0;
+    left: 0;
+}
+.Return:hover {
+    color: white;
+    border-color: transparent;
+}

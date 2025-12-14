@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <title>Block Game</title>
+</head>
+
+<body>
+    <div class="playAgain">play Again</div>
+    <div class="control-game">
+        <div class="settings">
+            <label for="speed-input">Change Speed</label><input id="speed-input" type="number" placeholder="--"
+                title="In Pixel">
+            <div class="icon Batman" style="background-image: url(imgs/Batman.png);"></div>
+            <div class="icon smilyface " style="background-image: url(imgs/smilyface.ico);"></div>
+        </div>
+        <div class="levels-container">
+            <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
+        </div>
+    </div>
+    <h1 class="level-numper">Level <span>X</span></h1>
+    <div class="game-container">
+
+    </div>
+    <audio id="death" src="audio/death-sound.mp3" preload="auto"></audio>
+    <audio id="end" src="audio/end.mp3" preload="auto"></audio>
+    <audio id="Batman" src="audio/Batman.mp3" preload="auto"></audio>
+</body>
+<script src="JS/main.js"></script>
+
+</html>
