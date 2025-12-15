@@ -39,6 +39,7 @@
     height: 100%;
     z-index: 2;
     background-color: rgba(3, 169, 244, 0.9);
+    /* display: none; */
     /* ////////////////////////////////////////////////////////// */
 }
 .settings {
@@ -254,4 +255,42 @@
 .Return:hover {
     color: white;
     border-color: transparent;
+}
+
+.btns {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translateX(50%);
+    width: 80%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    -webkit-user-select: none;
+    user-select: none;
+    align-items: center;
+    display: none;
+}
+.side {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.btns #game-btn {
+    font-size: 80px;
+    color: black;
+    font-weight: 900;
+    background-color: #eee;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+@media (max-width: 768px) {
+    .btns {
+        display: flex;
+    }
 }
